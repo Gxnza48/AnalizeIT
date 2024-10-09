@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: black;
+  color: white;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #cccccc;
+}
+
+/* Light blue aqua accents */
+.accent-glow {
+  box-shadow: 0 0 15px rgba(100, 255, 255, 0.3);
+}
+
+/* Animated background light */
+@keyframes moveLight {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(100%, 100%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.moving-light {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(100, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+  animation: moveLight 20s infinite alternate;
+  pointer-events: none;
+}
+
+/* Gradient text (only for logo) */
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600;
+}
+
+/* Smooth scroll behavior for internal links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hover effect for feature cards */
+.feature-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+}
